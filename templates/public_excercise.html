@@ -1,0 +1,32 @@
+{% extends "main.html" %}
+{% block content %}
+	
+<div class="row">
+	<!-- Excercise Info Start -->
+	<div class="col-md-1 col-sm-1 col-xs-0"></div>
+	<div class="col-md-10 col-sm-10 col-xs-12 Excercise-description">
+		<h2>
+			{{ Excercise.name }}
+		</h2>
+		<h4>
+			<em>{{Excercise.provider}} | {{Excercise.review}} Reviews</em>
+		</h4>
+		<br>
+		<h3>
+			Description
+		</h3>
+		<br>
+		<p>
+			{{Excercise.description}}
+		</p>
+		<a href="{{Excercise.link}}">
+			More Info
+		</a>
+		<br><br><br>
+	</div>
+	<div class="col-md-1 col-sm-1 col-xs-0"></div>
+	<!-- Excercise Info End -->
+</div>
+		
+	
+{% endblock %}

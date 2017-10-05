@@ -1,0 +1,37 @@
+{% extends "main.html" %}
+{% block content %}
+	
+<div class="row">
+	<div class="col-md-1 col-sm-1 col-xs-1"></div>
+	<div class="col-md-10 col-sm-10 col-xs-10 Excercise-description">
+	<!-- Excercise Info Start -->
+		<h2>
+			{{ Excercise.name }}
+		</h2>
+
+		<h3>
+			Description:
+		</h3>
+		<br>
+		<p>
+			{{Excercise.description}}
+		</p>
+		<a href="{{Excercise.link}}">
+			More Info
+		</a>
+		<br><br><br>
+		<a href="{{ url_for('editExcercise', level_name=level.name, Excercise_name=Excercise.name) }}">
+			<button class="btn btn-default" id="new-item" >
+				<span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit
+			</button>
+		</a>
+		<a href="{{url_for('deleteExcercise', level_name=level.name, Excercise_name=Excercise.name)}}">
+			<button class="btn btn-default">
+				<span class="glyphicon glyphicon-minus" aria-hidden="true"></span> Delete
+			</button>
+		</a>
+	<!-- Excercise Info End -->
+	</div>
+	<div class="col-md-1 col-sm-1 col-xs-1"></div>
+</div>	
+{% endblock %}

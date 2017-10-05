@@ -1,0 +1,38 @@
+{% extends "main.html" %}
+{% block content %}
+	
+<div class="row">
+	<div class="col-md-1 col-sm-1 col-xs-0"></div>
+	<!-- Levels Start -->
+	<div class="col-md-3 col-sm-3 col-xs-5 level-list">
+		<h1>
+			Levels
+		</h1>
+		{% for level in levels %}
+		<a href = "{{url_for('showLevel', level_name=level.name)}}">
+			<p>
+				{{level.name}}
+			</p>
+		</a>
+		{% endfor %}
+	</div>
+	<!-- Levels End -->
+	<!-- Particular Level Excercise Start -->
+	<div class="col-md-7 col-sm-7 col-xs-7 Excercise-list">
+		<h1>
+			{{ level.name }}
+		</h1>
+		{% for Excercise in Excercises %}
+		<a href = "{{url_for('showExcercise', level_name=level.name, Excercise_name=Excercise.name)}}">
+			<p>
+				{{Excercise.name}}
+			</p>
+		</a>
+		{% endfor %}
+	</div>
+	<!-- Particular Level Excercises End -->
+	<div class="col-md-1 col-sm-1 col-xs-0"></div>
+</div>
+		
+	
+{% endblock %}

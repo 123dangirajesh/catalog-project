@@ -1,0 +1,47 @@
+{% extends "main.html" %}
+{% block content %}
+
+<div class="row">
+	<!-- Form for Edit Excercise Start -->
+	<div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12 padding-top form-style">
+		<h1>
+			Edit Excercise
+		</h1>
+		<form action="{{ url_for('editExcercise', level_name=level.name, Excercise_name=Excercise.name) }}" method = "post">
+			<div class="form-group">
+			
+				<label for="name">Name:</label>
+				<input type ="text" maxlength="50" class="form-control" name="name" value="{{Excercise.name }}">
+				
+				<label for="provider">Provider:</label>
+				<input type ="text" maxlength="50" class="form-control" name="provider" value="{{Excercise.provider }}">
+				
+				<label for="link">Link:</label>
+				<input type ="text" maxlength="50" class="form-control" name="link" value="{{Excercise.link }}">
+
+				<label for="description">Description:</label>
+				<textarea class="form-control" maxlength="250" rows="3" name="description">{{Excercise.description}}</textarea>
+
+				<label for="level">Level:</label>
+				<br>
+				<select name="level">
+				    <option value="Easy" name="level" id="level1" {% if level.name == 'Easy'%}selected{%endif%} >
+            	        Easy
+        		    </option>
+					<option value="Medium" name="level" id="level2" {% if level.name =='Medium'%}selected{%endif%} >
+					    Medium
+					</option>
+					<option value="Difficult" name="level" id="level3" {% if level.name == 'Difficult'%}selected{%endif%} >
+					    Difficult
+					</option>
+				</select>
+				<br><br>
+				
+				<button class="btn btn-default" id="submit" type="submit">Submit</button>
+			</div>
+		</form>
+	</div>
+	<!-- Form for Edit Excercise End -->
+</div>
+
+{% endblock %}
