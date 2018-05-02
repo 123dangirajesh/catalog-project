@@ -207,10 +207,10 @@ def showLevels():
     # Checks if user in session and renders page accordingly.
     if 'username' not in login_session:
         return render_template('public_levels.html',
-                               levels=levels, Excercises=Excercises)
+                               levels=levels, Excercise=Excercise)
     else:
         return render_template('member_levels.html',
-                               levels=levels, Excercises=Excercises)
+                               levels=levels, Excercise=Excercise)
 
 
 # Show existing Excercise in a level
